@@ -1,4 +1,7 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import '@testing-library/jest-dom'
+// @ts-expect-error
+import React from "react";
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import ListComponent from '../../../components/common/List';

@@ -1,5 +1,5 @@
 import { Button, Form, FormInstance, Input } from 'antd';
-
+import React from 'react';
 type FieldType = {
     name?: string;
     position?: string;
@@ -11,7 +11,7 @@ interface IProps {
     onSubmitForm: () => void
 }
 
-const EmployeeForm = (props: IProps) => {
+const EmployeeForm: React.FC<IProps> = (props: IProps) => {
     const { form, onSubmitForm } = props
     const handleSubmitForm = () =>{
         if(typeof onSubmitForm === 'function'){
@@ -21,7 +21,6 @@ const EmployeeForm = (props: IProps) => {
     return (
         <Form
             form={form}
-            name="basic"
             labelCol={{ span: 8 }}
             wrapperCol={{ span: 16 }}
             style={{ maxWidth: 600 }}

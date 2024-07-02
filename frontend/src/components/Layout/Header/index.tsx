@@ -1,9 +1,10 @@
+import React from 'react';
 import { Menu, MenuProps } from 'antd';
 import { Header } from 'antd/lib/layout/layout';
 import { useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const HeaderLayout = () => {
+const HeaderLayout: React.FC = () => {
   const location = useLocation();
 
   const activePath = useMemo(() => {

@@ -1,3 +1,4 @@
+import React from 'react'
 import { useEffect } from 'react'
 import classes from './Employee.module.scss'
 import EmployeeForm from './components/EmployeeForm'
@@ -5,7 +6,7 @@ import { Form, message } from 'antd'
 import { useMutationEmployee, useQueryDetailEmployee } from '../../hooks/employee'
 import { useNavigate, useParams } from 'react-router-dom'
 
-const EmployeeEditComponent = () => {
+const EmployeeEditComponent: React.FC = () => {
     const {id} = useParams()
   const [form] = Form.useForm();
   const [messageApi] = message.useMessage();
