@@ -1,0 +1,19 @@
+.content{
+    padding: 50px
+}
+
+.container{
+    width: 100%;
+    background-color: #fff;
+    padding: 24px;
+}
+
+@media screen and (max-width: 600px) {
+    .content{
+        padding: 0px;
+    }
+    .container{
+        overflow-x: scroll;
+        padding: 16px;
+    }
+}

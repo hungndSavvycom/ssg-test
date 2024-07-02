@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+package employee;
+
+message GetEmployeeRequest {
+  int32 id = 1;
+}
+
+message CreateEmployeeRequest {
+  string name = 1;
+  string position = 2;
+  float salary = 3;
+}
+
+message UpdateEmployeeRequest {
+  int32 id = 1;
+  string name = 2;
+  string position = 3;
+  float salary = 4;
+}
+
+message DeleteEmployeeRequest {
+  int32 id = 1;
+}
+
+message DeleteEmployeeResponse {
+  string message = 1;
+}
+
+message Employee {
+  int32 id = 1;
+  string name = 2;
+  string position = 3;
+  float salary = 4;
+}
+
+message Employees {
+  repeated Employee employees = 1;
+}
+
+message Empty {}
+
+// The employee service definition.
+service EmployeeService {
+  rpc GetEmployee(GetEmployeeRequest) returns (Employee) {}
+  rpc GetAllEmployees(Empty) returns (Employees) {}
+  rpc CreateEmployee(CreateEmployeeRequest) returns (Employee) {}
+  rpc UpdateEmployee(UpdateEmployeeRequest) returns (Employee) {}
+  rpc DeleteEmployee(DeleteEmployeeRequest) returns (DeleteEmployeeResponse) {}
+}
