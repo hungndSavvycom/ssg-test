@@ -44,3 +44,13 @@ For production deployment, we use AWS EC2 instances. The services will be access
 
 1. **API Gateway**: <http://13.251.132.216:4100/>
 2. **Frontend**: <http://13.251.132.216:4175/>
+
+## Testing
+
+### Unit Tests
+
+Unit tests are included for the Frontend service. To run the tests, navigate to the **frontend** folder and use the following command:
+
+```bash
+npm run test
+```
