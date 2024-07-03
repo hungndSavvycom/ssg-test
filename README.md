@@ -38,9 +38,13 @@ Docker compose include: **frontend**, **api-gateway**, **management-microservice
 
 ## Production Deployment
 
-For production deployment, we use AWS EC2 instances. The services will be accessible via the following URLs:
+For production deployment, we use AWS EC2 instances. Create 1 EC2 instance with public elastics IP. All 3 services (api-gateway, frontend, management-microservices) deploy in 1 ec2 instance. Using docker-compose to build and run 3 services with 3 container.
+Open public port: 4100 (API-gateway), 4175(frontend) by  update inbound rule security.
+Setup nginx reverse proxy which listen port and proxy into docker container's port.
 
 ### URLs for Production
+
+The services will be accessible via the following URLs:
 
 1. **API Gateway**: <http://13.251.132.216:4100/>
 2. **Frontend**: <http://13.251.132.216:4175/>
